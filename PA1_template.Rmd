@@ -1,8 +1,9 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
+title: 'Reproducible Research: Peer Assessment 1'
+output:
   html_document:
-    keep_md: true
+    keep_md: yes
+  pdf_document: default
 ---
 
 ---
@@ -56,8 +57,9 @@ median(SPD$Steps, na.rm=TRUE)  ## [1] 10765
 SPT <- aggregate(steps~interval,data=activity,FUN=mean,na.action=na.omit)
 # variable time (more comprensible for the graph axis)
 SPT$time <- SPT$interval/100
+```
 # draw the line plot
-
+```{r}
 h <- ggplot(SPT, aes(time, steps))
 h+geom_line(col="blue")+ggtitle("Average steps per time interval")+xlab("Time")+ylab("Steps")+theme(plot.title = element_text(face="bold", size=12))
 
@@ -106,8 +108,9 @@ head(activityAll, n=10)
 # histogram of the total number of steps taken each day
 SPDAll <- aggregate(activityAll$steps, list(activityAll$date), FUN=sum)
 colnames(SPDAll) <- c("Date", "Steps")
+```
 # draw the histogram
-
+```{r}
 g <- ggplot(SPDAll, aes(Steps))
 g+geom_histogram(boundary=0, binwidth=2500, col="darkgreen", fill="lightgreen")+ggtitle("Histogram of steps per day")+xlab("Steps")+ylab("Frequency")+theme(plot.title = element_text(face="bold", size=12))+scale_x_continuous(breaks=seq(0,25000,2500))+scale_y_continuous(breaks=seq(0,26,2))
 
@@ -138,8 +141,9 @@ SPTDT <- aggregate(steps~interval+DayType,data=activityAll,
                    FUN=mean,na.action=na.omit)
 # variable time (more comprensible for the graph axis)
 SPTDT$time <- SPT$interval/100
+```
 # draw the line plot
-
+```{r}
 j <- ggplot(SPTDT, aes(time, steps))
 j+geom_line(col="darkred")+ggtitle("Average steps per time interval: weekdays vs. weekends")+xlab("Time")+ylab("Steps")+theme(plot.title = element_text(face="bold", size=12))+facet_grid(DayType ~ .)
 ```
