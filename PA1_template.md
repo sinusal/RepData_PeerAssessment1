@@ -133,15 +133,6 @@ g+geom_histogram(boundary=0, binwidth=2500, col="darkblue", fill="lightblue")+gg
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
-```r
-dev.off()
-```
-
-```
-## null device 
-##           1
-```
-
 #Mean and median of total number of steps taken per day
 
 ```r
@@ -174,15 +165,6 @@ h+geom_line(col="blue")+ggtitle("Average steps per time interval")+xlab("Time")+
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
-
-```r
-dev.off()
-```
-
-```
-## null device 
-##           1
-```
 
 # 5-minute interval with the maximum number of steps
 # table for dplyr
@@ -304,15 +286,6 @@ g+geom_histogram(boundary=0, binwidth=2500, col="darkgreen", fill="lightgreen")+
 
 ![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
-```r
-dev.off()
-```
-
-```
-## null device 
-##           1
-```
-
 # mean and median of total number of steps taken per day
 
 ```r
@@ -374,13 +347,4 @@ j+geom_line(col="darkred")+ggtitle("Average steps per time interval: weekdays vs
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
-
-```r
-dev.off()
-```
-
-```
-## null device 
-##           1
-```
 
